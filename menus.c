@@ -63,16 +63,16 @@ int high_finder(int high,char *str[])
 int main(void)
 {
 
-    char *hard_string[10][100] = {"Main Menu","Sub Menu One","Sub Menu Three","Sub Menu Four"};
+    char *hard_string[] = {"Main Menu","Sub Menu One","Sub Menu Three","Sub Menu Four"};
     char symbols[3][3] = {"=","*"};
     int i,high=0;
-    high = high_finder(high,*hard_string);
-    title_print(*hard_string[0],symbols[1],offset=1);
+    high = high_finder(high,hard_string);
+    title_print(hard_string[0],symbols[1],offset=1);
     printf(" ");
     symbol_print(high+6, symbols[0],offset=0);
     printf("\n");
-    sub_heading(*hard_string[1], symbols[0],1,high);
-    sub_heading(*hard_string[2], symbols[0],2,high);
-    sub_heading(*hard_string[3], symbols[0],3,high);
+    sub_heading(hard_string[1], symbols[0],1,high);
+    sub_heading(hard_string[2], symbols[0],2,high);
+    sub_heading(hard_string[3], symbols[0],3,high);
     return 0;
 }

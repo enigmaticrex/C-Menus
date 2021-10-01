@@ -36,7 +36,7 @@ int title_print(char *str,char *symbol,bool offset,char *symbol2)
         symbol_print(size,symbol,offset);
         printf("\n");
         printf(" ");
-        symbol_print(size, symbol2,offset=0);
+        symbol_print(size+7, symbol2,offset=0);
         printf("\n");
         return 0;
     }
@@ -48,7 +48,7 @@ int sub_heading(char *str,char *symbol,int number,int high)
         printf(" ");
         printf("\n");
         printf(" ");
-        symbol_print(size,symbol,offset);
+        symbol_print(size,symbol,offset=0);
         printf("\n");
         return 0;
     }
@@ -72,9 +72,6 @@ int main(void)
     int high=0;
     high = high_finder(high,hard_string);
     title_print(hard_string[0],symbols[1],offset=1,symbols[0]);
-    printf(" ");
-    symbol_print(high+6, symbols[0],offset=0);
-    printf("\n");
     sub_heading(hard_string[1], symbols[0],1,high);
     sub_heading(hard_string[2], symbols[0],2,high);
     return 0;

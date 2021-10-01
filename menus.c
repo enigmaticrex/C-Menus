@@ -67,13 +67,15 @@ int high_finder(int high,char *str[],int array_size)
 }
 int choice_redirection(char c){
   system("clear");
-  char *sub_menu_titles[SIZE]={"Menu Maker","Add a Main Menu","Add a Sub-Menu"};
+  char *sub_menu_titles[SIZE]={"Menu Maker","Add a Main-Menu","Add a Sub-Menu","Exit to Main Menu"};
   char *symbols[SIZE] = {"=","*"};
   title_print(sub_menu_titles[0],symbols[1],offset=1,symbols[0]);
   printf(" ");
   symbol_print(6, symbols[0],offset=0);
   printf("\n");
   sub_heading(sub_menu_titles[1], symbols[0],1,6);
+  sub_heading(sub_menu_titles[2], symbols[0],2,6);
+  sub_heading(sub_menu_titles[3], symbols[0],3,6);
   return 0;
 }
 int default_lines(int selection)

@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
+#define SIZE 100
 bool offset = 0;
 int symbol_print(int size,char *symbol,bool menu_check)
         {
@@ -63,8 +64,8 @@ int high_finder(int high,char *str[])
 int main(void)
 {
 
-    char *hard_string[100] = {"Main Menu","Sub Menu One","Sub Menu Three","Sub Menu Four"};
-    char symbols[3][3] = {"=","*"};
+    char *hard_string[SIZE] = {"Main Menu","Sub Menu One","Sub Menu Three","Sub Menu Four"};
+    char *symbols[SIZE] = {"=","*"};
     int i,high=0;
     high = high_finder(high,hard_string);
     title_print(hard_string[0],symbols[1],offset=1);

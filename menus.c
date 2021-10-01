@@ -27,7 +27,7 @@ void title_print(char *str,char *symbol)
         symbol_print(size,symbol);
         printf("\n");
     }
-void sub_heading(char *str,char *symbol)
+void sub_heading(char *str,char *symbol,int number)
     {
         
         int size = strlen(str)+6;
@@ -35,7 +35,7 @@ void sub_heading(char *str,char *symbol)
         symbol_print(size,symbol);
         printf("\n");
         printf("|");
-        printf("  1. %s ",str);
+        printf("  %d. %s ",number,str);
         printf(" ");
         printf("|");
         printf(" ");
@@ -52,8 +52,9 @@ int main(void)
     char symbols[3][3] = {"=","*"};
     
     title_print(hard_string[0],symbols[1]);
-    sub_heading(hard_string[1], symbols[0]);
-    sub_heading(hard_string[2], symbols[0]);
-    sub_heading(hard_string[3], symbols[0]);
+    sub_heading(hard_string[1], symbols[0],1);
+    sub_heading(hard_string[2], symbols[0],2);
+    sub_heading(hard_string[3], symbols[0],3);
+  
     return 0;
 }

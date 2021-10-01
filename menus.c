@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
+#include <stdlib.h>
 #define SIZE 100
 bool offset = 0;
 int symbol_print(int size,char *symbol,bool menu_check)
@@ -64,9 +65,15 @@ int high_finder(int high,char *str[])
     }
   return high;
 }
+int default_lines(int selection)
+{
+  char *default_strings[SIZE]={"\nEnter any key to continue....","\nEnter Your Choice:  ","\nPress Any Key to Exit"};
+  printf("%s",default_strings[selection]);
+  getchar();
+  return 0;
+}
 int main(void)
 {
-
     char *hard_string[SIZE] = {"Main Menu","Menu Maker","Exit","Sub Menu Four"};
     char *symbols[SIZE] = {"=","*"};
     int high=0;
@@ -74,5 +81,7 @@ int main(void)
     title_print(hard_string[0],symbols[1],offset=1,symbols[0]);
     sub_heading(hard_string[1], symbols[0],1,high);
     sub_heading(hard_string[2], symbols[0],2,high);
+    default_lines(1);
+    system("clear");
     return 0;
 }

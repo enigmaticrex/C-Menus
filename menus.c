@@ -65,13 +65,23 @@ int high_finder(int high,char *str[])
     }
   return high;
 }
-int default_lines(int selection)
-{
-  char *default_strings[SIZE]={"\nEnter any key to continue....","\nEnter Your Choice:  ","\nPress Any Key to Exit"};
-  printf("%s",default_strings[selection]);
-  getchar();
+int choice_redirection(char c){
+  system("clear");
+  char * sub_menu_titles[SIZE]={"Menu Maker"};
+  char *symbols[SIZE] = {"=","*"};
+  title_print(sub_menu_titles[0],symbols[1],offset=1,symbols[0]);
   return 0;
 }
+int default_lines(int selection)
+{
+  char c ;
+  char *default_strings[SIZE]={"\nEnter any key to continue....","\nEnter Your Choice:  ","\nPress Any Key to Exit"};
+  printf("%s",default_strings[selection]);
+  c = getchar();
+  choice_redirection(c);
+  return 0;
+}
+
 int main(void)
 {
     char *hard_string[SIZE] = {"Main Menu","Menu Maker","Exit","Sub Menu Four"};
@@ -82,6 +92,5 @@ int main(void)
     sub_heading(hard_string[1], symbols[0],1,high);
     sub_heading(hard_string[2], symbols[0],2,high);
     default_lines(1);
-    system("clear");
     return 0;
 }

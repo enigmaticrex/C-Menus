@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdbool.h>
 bool offset = 0;
-void symbol_print(int size,char *symbol,bool menu_check)
+int symbol_print(int size,char *symbol,bool menu_check)
         {
           if(menu_check)
           {
@@ -13,8 +13,9 @@ void symbol_print(int size,char *symbol,bool menu_check)
             {
                 printf("%s",symbol);
             } 
+            return 0;
         }
-void title_print(char *str,char *symbol,bool offset)
+int title_print(char *str,char *symbol,bool offset)
     {
         int size = strlen(str)+3;
         printf(" ");
@@ -33,8 +34,9 @@ void title_print(char *str,char *symbol,bool offset)
         printf(" ");
         symbol_print(size,symbol,offset);
         printf("\n");
+        return 0;
     }
-void sub_heading(char *str,char *symbol,int number,int high)
+int sub_heading(char *str,char *symbol,int number,int high)
     {
         int size = high+6;
         printf("  %d. %s ",number,str);
@@ -44,6 +46,7 @@ void sub_heading(char *str,char *symbol,int number,int high)
         printf(" ");
         symbol_print(size,symbol,offset);
         printf("\n");
+        return 0;
     }
 
 int main(void)

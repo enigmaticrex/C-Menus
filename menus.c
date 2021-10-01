@@ -16,7 +16,7 @@ int symbol_print(int size,char *symbol,bool menu_check)
             } 
             return 0;
         }
-int title_print(char *str,char *symbol,bool offset)
+int title_print(char *str,char *symbol,bool offset,char *symbol2)
     {
         int size = strlen(str)+3;
         printf(" ");
@@ -34,6 +34,9 @@ int title_print(char *str,char *symbol,bool offset)
         printf("\n");
         printf(" ");
         symbol_print(size,symbol,offset);
+        printf("\n");
+        printf(" ");
+        symbol_print(size, symbol2,offset=0);
         printf("\n");
         return 0;
     }
@@ -64,16 +67,15 @@ int high_finder(int high,char *str[])
 int main(void)
 {
 
-    char *hard_string[SIZE] = {"Main Menu","Sub Menu One","Sub Menu Three","Sub Menu Four"};
+    char *hard_string[SIZE] = {"Main Menu","Menu Maker","Exit","Sub Menu Four"};
     char *symbols[SIZE] = {"=","*"};
-    int i,high=0;
+    int high=0;
     high = high_finder(high,hard_string);
-    title_print(hard_string[0],symbols[1],offset=1);
+    title_print(hard_string[0],symbols[1],offset=1,symbols[0]);
     printf(" ");
     symbol_print(high+6, symbols[0],offset=0);
     printf("\n");
     sub_heading(hard_string[1], symbols[0],1,high);
     sub_heading(hard_string[2], symbols[0],2,high);
-    sub_heading(hard_string[3], symbols[0],3,high);
     return 0;
 }

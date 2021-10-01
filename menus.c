@@ -34,10 +34,8 @@ void sub_heading(char *str,char *symbol,int number,int high)
         printf(" ");
         symbol_print(size,symbol);
         printf("\n");
-        printf("|");
         printf("  %d. %s ",number,str);
         printf(" ");
-        printf("|");
         printf(" ");
         printf("\n");
         printf(" ");

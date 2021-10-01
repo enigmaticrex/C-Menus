@@ -1,26 +1,20 @@
 #include <stdio.h>
 #include <string.h>
-
-int main(void)
-{
-    char str[10] = "1";
-    char str2[10] = "Menu";
-    char str3[10] = "10";
-    char equal[2] ="=";
-    char under_score[2] = "_";
-    void title_print(char *str,char *symbol)
-    {
-        int size = strlen(str)+3;
-        int i;
-        printf(" ");
-        void symbol_print(char *symbol)
+void symbol_print(int size,char *symbol)
         {
+          int i;
+          
            for(i=0;i<=size;i++)
             {
                 printf("%s",symbol);
             } 
         }
-        symbol_print(symbol);
+void title_print(char *str,char *symbol)
+    {
+        
+        int size = strlen(str)+3;
+        printf(" ");
+        symbol_print(size,symbol);
         printf("\n");
         printf("|");
         printf("  %s ",str);
@@ -29,11 +23,16 @@ int main(void)
         printf(" ");
         printf("\n");
         printf(" ");
-        symbol_print(symbol);
+        symbol_print(size,symbol);
         printf("\n");
     }
-    title_print(str,equal);
-    title_print(str3,equal);
-    title_print(str2,equal);
+int main(void)
+{
+
+    char hard_string[10] = "Menu";
+    char symbols[3][10] = {"=","*"};
+    
+    title_print(hard_string,symbols[0]);
+    title_print(hard_string,symbols[1]);
     return 0;
 }

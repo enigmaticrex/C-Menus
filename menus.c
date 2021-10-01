@@ -30,7 +30,10 @@ void title_print(char *str,char *symbol)
 void sub_heading(char *str,char *symbol)
     {
         
-        int size = strlen(str)+3;
+        int size = strlen(str)+6;
+        printf(" ");
+        symbol_print(size,symbol);
+        printf("\n");
         printf("|");
         printf("  1. %s ",str);
         printf(" ");
@@ -45,10 +48,12 @@ void sub_heading(char *str,char *symbol)
 int main(void)
 {
 
-    char hard_string[10][10] = {"Main Menu","Sub Menu"};
+    char hard_string[10][100] = {"Main Menu","Sub Menu One","Sub Menu Three","Sub Menu Four"};
     char symbols[3][3] = {"=","*"};
     
     title_print(hard_string[0],symbols[1]);
     sub_heading(hard_string[1], symbols[0]);
+    sub_heading(hard_string[2], symbols[0]);
+    sub_heading(hard_string[3], symbols[0]);
     return 0;
 }

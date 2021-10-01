@@ -63,7 +63,7 @@ int high_finder(int high,char *str[])
 int main(void)
 {
 
-    char *hard_string[] = {"Main Menu","Sub Menu One","Sub Menu Three","Sub Menu Four"};
+    char *hard_string[100] = {"Main Menu","Sub Menu One","Sub Menu Three","Sub Menu Four"};
     char symbols[3][3] = {"=","*"};
     int i,high=0;
     high = high_finder(high,hard_string);

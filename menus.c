@@ -53,10 +53,10 @@ int sub_heading(char *str,char *symbol,int number,int high)
         printf("\n");
         return 0;
     }
-int high_finder(int high,char *str[])
+int high_finder(int high,char *str[],int array_size)
 {
   int i;
-  for(i =1;i<=3;i++)
+  for(i =1;i<=array_size;i++)
     {
       if(strlen(str[i])>high)
       {
@@ -73,7 +73,7 @@ int choice_redirection(char c){
   printf(" ");
   symbol_print(6, symbols[0],offset=0);
   printf("\n");
-  sub_heading(sub_menu_titles[1], symbols[0],1,15);
+  sub_heading(sub_menu_titles[1], symbols[0],1,6);
   return 0;
 }
 int default_lines(int selection)
@@ -90,9 +90,10 @@ int main(void)
 {
     char *hard_string[SIZE] = {"Main Menu","Menu Maker","Exit","Sub Menu Four"};
     char *symbols[SIZE] = {"=","*"};
+    int array_size;
+    //int array_size  = sizeof(hard_string)/sizeof(hard_string[0]);
     int high=0;
-    high = high_finder(high,hard_string);
-    
+    high = high_finder(high,hard_string,array_size=3);
     title_print(hard_string[0],symbols[1],offset=1,symbols[0]);
     printf(" ");
     symbol_print(high+6, symbols[0],offset=0);
